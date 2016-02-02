@@ -30,7 +30,9 @@ var urls = [
     { 'name': 'abc-liveblog', 'url': 'http://liveblog.abcnews.go.com/Event/2016_Iowa_Caucus_Rolling_Updates' },
     { 'name': 'cbs', 'url': 'http://www.cbsnews.com' },
     { 'name': 'dmregister', 'url': 'http://www.desmoinesregister.com' },
-    { 'name': 'dmregister-results', 'url': 'http://data.desmoinesregister.com/iowa-caucus/results/' }
+    { 'name': 'dmregister-results', 'url': 'http://data.desmoinesregister.com/iowa-caucus/results/' },
+    { 'name': 'microsoft-gop', 'url': 'https://www.iagopcaucuses.com/#/state' },
+    { 'name': 'microsoft-dem', 'url': 'https://www.idpcaucuses.com/#/state' }
 ];
 
 var screenCap = function() {
