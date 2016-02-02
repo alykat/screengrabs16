@@ -15,6 +15,7 @@ var urls = [
     { 'name': 'latimes', 'url': 'http://www.latimes.com' },
     { 'name': 'wsj', 'url': 'http://www.wsj.com' },
     { 'name': 'wsj-liveblog', 'url': 'http://www.wsj.com/livecoverage/iowa-caucus-2016' },
+    { 'name': 'wsj-results', 'url': 'http://graphics.wsj.com/elections/2016/iowa-caucus-results/' },
     { 'name': 'guardian', 'url': 'http://www.theguardian.com/us' },
     { 'name': 'guardian-liveblog', 'url': 'http://www.theguardian.com/us-news/live/2016/feb/01/iowa-caucus-vote-live-donald-trump-ted-cruz-bernie-sanders-hillary-clinton-2016' },
     { 'name': 'guardian-results', 'url': 'http://www.theguardian.com/us-news/ng-interactive/2016/feb/01/iowa-caucus-results-live-county-by-county-interactive-map' },
@@ -39,36 +40,37 @@ var screenCap = function() {
 }
 
 var saveImg = function(p) {
-	var page = require('webpage').create();
+    var page = require('webpage').create();
     var timestamp = null;
 
-	page.viewportSize = {
-	  width: 1600,
-	  height: 3200
-	};
+    page.viewportSize = {
+        width: 1600,
+        height: 2000
+    };
 
-	page.open(p['url'], function(success) {
-		timestamp = (new Date()).toLocaleString();
+    // page.settings.userAgent = 'Chrome/48.0.2564.97';
 
-		if(success) {
+    page.open(p['url'], function(success) {
+        timestamp = (new Date()).toLocaleString();
+
+        if(success) {
             console.log(p['name']);
-			wait();
-		} else {
+            wait();
+        } else {
             console.log('error: ' + p['name']);
-            // console.log(success);
         }
-	});
+    });
 
-	function wait() {
-		setTimeout(function() {
-			page.render('2016-02-01/' + p['name'] + '-' + timestamp + '.png');
+    function wait() {
+        setTimeout(function() {
+            page.render('2016-02-01/' + p['name'] + '-' + timestamp + '.png');
 
             counter++;
             if (counter == urls.length - 1) {
                 phantom.exit();
             }
-		}, 10000);
-	}
+        }, 30000);
+    }
 }
 
 screenCap();
