@@ -27,14 +27,24 @@ var urls = [
     // { 'name': 'politico-results', 'url': 'http://www.politico.com/2016-election/results/map/president/iowa' },
     { 'name': 'nbc', 'url': 'http://www.nbcnews.com' },
     { 'name': 'nbc-results', 'url': 'http://www.nbcnews.com/politics/2016-election/primaries/IA' },
-    { 'name': 'abc', 'url': 'http://abcnews.go.com' },
+    { 'name': 'abc', 'url': 'http://abcnews.go.com' }
     // { 'name': 'abc-liveblog', 'url': 'http://liveblog.abcnews.go.com/Event/2016_Iowa_Caucus_Rolling_Updates' },
     // { 'name': 'cbs', 'url': 'http://www.cbsnews.com' },
-    { 'name': 'dmregister', 'url': 'http://www.desmoinesregister.com' }
-    // { 'name': 'dmregister-results', 'url': 'http://data.desmoinesregister.com/iowa-caucus/results/' }
+    // { 'name': 'dmregister', 'url': 'http://www.desmoinesregister.com' },
+    // { 'name': 'dmregister-results', 'url': 'http://data.desmoinesregister.com/iowa-caucus/results/' },
     // { 'name': 'microsoft-gop', 'url': 'https://www.iagopcaucuses.com/#/state' },
     // { 'name': 'microsoft-dem', 'url': 'https://www.idpcaucuses.com/#/state' }
 ];
+
+var classify = function(str) {
+    return str.toLowerCase()
+        .replace(/\s+/g, '-')           // Replace spaces with -
+        .replace(/:/g, '-')             // Replace colons with -
+        .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+        .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+        .replace(/^-+/, '')             // Trim - from start of text
+        .replace(/-+$/, '');            // Trim - from end of text
+}
 
 var screenCap = function() {
     urls.forEach(function(v,k) {
@@ -57,7 +67,7 @@ var saveImg = function(p) {
         timestamp = (new Date()).toLocaleString();
 
         if(success) {
-            console.log(p['name']);
+            console.log(p['name'], timestamp, classify(timestamp));
             wait();
         } else {
             console.log('error: ' + p['name']);
@@ -66,7 +76,7 @@ var saveImg = function(p) {
 
     function wait() {
         setTimeout(function() {
-            page.render('2016-02-01/' + p['name'] + '-' + timestamp + '.png');
+            page.render('2016-02-09/' + p['name'] + '-' + classify(timestamp) + '.png');
 
             counter++;
             if (counter == urls.length - 1) {
