@@ -1,7 +1,7 @@
 var HOMEPAGES = [
     { 'name': 'npr', 'url': 'http://www.npr.org' },
     { 'name': 'npr-elections', 'url': 'http://elections.npr.org' },
-    // ERRORS { 'name': 'nyt', 'url': 'http://www.nytimes.com' },
+    { 'name': 'nyt', 'url': 'http://www.nytimes.com' },
     { 'name': 'wapo', 'url': 'http://www.washingtonpost.com' },
     { 'name': 'cnn', 'url': 'http://www.cnn.com' },
     { 'name': 'latimes', 'url': 'http://www.latimes.com' },
@@ -12,6 +12,7 @@ var HOMEPAGES = [
     { 'name': 'nbc', 'url': 'http://www.nbcnews.com' },
     { 'name': 'abc', 'url': 'http://abcnews.go.com' },
     { 'name': 'bostonglobe', 'url': 'http://www.bostonglobe.com' },
+    { 'name': 'huffpo', 'url': 'http://www.huffingtonpost.com' },
     // CRASHES PHANTOM { 'name': 'cbs', 'url': 'http://www.cbsnews.com' },
     { 'name': 'unionleader', 'url': 'http://www.unionleader.com' },
     { 'name': 'concord-monitor', 'url': 'http://www.concordmonitor.com' },
@@ -31,13 +32,14 @@ var LIVEBLOGS = [
 
 var RESULTS = [
     { 'name': 'nyt-results', 'url': 'http://www.nytimes.com/elections/2016/primaries/new-hampshire' },
+    { 'name': 'nyt-model', 'url': 'http://www.nytimes.com/interactive/2016/02/08/upshot/live-new-hampshire-primary-model.html' },
     { 'name': 'wapo-results', 'url': 'https://www.washingtonpost.com/2016-election-results/new-hampshire/' },
     { 'name': 'cnn-results', 'url': 'http://www.cnn.com/election/primaries/states/nh/' },
     { 'name': 'latimes-results', 'url': 'http://graphics.latimes.com/election-2016-new-hampshire-results/' },
     { 'name': 'wsj-results', 'url': 'http://graphics.wsj.com/elections/2016/new-hampshire-primaries-results/' },
     { 'name': 'guardian-results', 'url': 'http://www.theguardian.com/us-news/ng-interactive/2016/feb/09/new-hampshire-primary-results-live-2016-presidential-election-county-by-county-map' },
     { 'name': 'politico-results', 'url': 'http://www.politico.com/2016-election/results/map/president/new-hampshire' },
-    { 'name': 'nbc-results', 'url': 'http://www.nbcnews.com/politics/2016-election/primaries/NH' },
+    // { 'name': 'nbc-results', 'url': 'http://www.nbcnews.com/politics/2016-election/primaries/NH' },
     { 'name': 'huffpo-results', 'url': 'http://elections.huffingtonpost.com/2016/primaries/2016-02-09' },
     { 'name': 'bostonglobe-dem-results', 'url': 'http://apps.bostonglobe.com/election-results/2016/primary/democratic/new-hampshire/' },
     { 'name': 'bostonglobe-gop-results', 'url': 'http://apps.bostonglobe.com/election-results/2016/primary/republican/new-hampshire/' },
