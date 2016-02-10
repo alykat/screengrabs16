@@ -1,40 +1,52 @@
-var counter = 0;
-
-var urls = [
+var homepages = [
     { 'name': 'npr', 'url': 'http://www.npr.org' },
-    // { 'name': 'npr-liveblog', 'url': 'http://www.npr.org/2016/02/01/465136350/the-stream-iowa-caucuses-edition' },
     { 'name': 'npr-elections', 'url': 'http://elections.npr.org' },
-    { 'name': 'nyt', 'url': 'http://www.nytimes.com' },
-    { 'name': 'nyt-results', 'url': 'http://www.nytimes.com/elections/2016/primaries/iowa' },
+    // ERRORS { 'name': 'nyt', 'url': 'http://www.nytimes.com' },
     { 'name': 'wapo', 'url': 'http://www.washingtonpost.com' },
-    // { 'name': 'wapo-liveblog', 'url': 'https://www.washingtonpost.com/politics/trump-clinton-cautiously-optimistic-ahead-of-iowa-caucuses/2016/02/01/914388ae-c88a-11e5-a7b2-5a2f824b02c9_story.html' },
-    { 'name': 'wapo-results', 'url': 'https://www.washingtonpost.com/2016-election-results/iowa/' },
     { 'name': 'cnn', 'url': 'http://www.cnn.com' },
-    { 'name': 'cnn-elections', 'url': 'http://www.cnn.com/election' },
-    { 'name': 'cnn-results', 'url': 'http://www.cnn.com/election/primaries/states/ia/' },
-    // { 'name': 'latimes', 'url': 'http://www.latimes.com' },
-    { 'name': 'latimes-results', 'url': 'http://graphics.latimes.com/election-2016-iowa-results/' },
+    { 'name': 'latimes', 'url': 'http://www.latimes.com' },
     { 'name': 'wsj', 'url': 'http://www.wsj.com' },
-    // { 'name': 'wsj-liveblog', 'url': 'http://www.wsj.com/livecoverage/iowa-caucus-2016' },
-    { 'name': 'wsj-results', 'url': 'http://graphics.wsj.com/elections/2016/iowa-caucus-results/' },
     { 'name': 'guardian', 'url': 'http://www.theguardian.com/us' },
-    // { 'name': 'guardian-liveblog', 'url': 'http://www.theguardian.com/us-news/live/2016/feb/01/iowa-caucus-vote-live-donald-trump-ted-cruz-bernie-sanders-hillary-clinton-2016' },
-    // { 'name': 'guardian-results', 'url': 'http://www.theguardian.com/us-news/ng-interactive/2016/feb/01/iowa-caucus-results-live-county-by-county-interactive-map' },
     { 'name': 'fox', 'url': 'http://www.foxnews.com' },
-    // { 'name': 'fox-liveblog', 'url': 'http://www.foxnews.com/politics/elections/2016/live-blog?intcmp=hpbt1' },
-    // { 'name': 'politico', 'url': 'http://www.politico.com' },
-    // { 'name': 'politico-liveblog', 'url': 'http://www.politico.com/blogs/iowa-caucus-2016-live-updates' },
-    // { 'name': 'politico-results', 'url': 'http://www.politico.com/2016-election/results/map/president/iowa' },
+    { 'name': 'politico', 'url': 'http://www.politico.com' },
     { 'name': 'nbc', 'url': 'http://www.nbcnews.com' },
-    { 'name': 'nbc-results', 'url': 'http://www.nbcnews.com/politics/2016-election/primaries/IA' },
-    { 'name': 'abc', 'url': 'http://abcnews.go.com' }
-    // { 'name': 'abc-liveblog', 'url': 'http://liveblog.abcnews.go.com/Event/2016_Iowa_Caucus_Rolling_Updates' },
-    // { 'name': 'cbs', 'url': 'http://www.cbsnews.com' },
-    // { 'name': 'dmregister', 'url': 'http://www.desmoinesregister.com' },
-    // { 'name': 'dmregister-results', 'url': 'http://data.desmoinesregister.com/iowa-caucus/results/' },
-    // { 'name': 'microsoft-gop', 'url': 'https://www.iagopcaucuses.com/#/state' },
-    // { 'name': 'microsoft-dem', 'url': 'https://www.idpcaucuses.com/#/state' }
+    { 'name': 'abc', 'url': 'http://abcnews.go.com' },
+    { 'name': 'bostonglobe', 'url': 'http://www.bostonglobe.com' },
+    // CRASHES PHANTOM { 'name': 'cbs', 'url': 'http://www.cbsnews.com' },
+    { 'name': 'unionleader', 'url': 'http://www.unionleader.com' },
+    { 'name': 'concord-monitor', 'url': 'http://www.concordmonitor.com' },
+    { 'name': 'nhpr', 'url': 'http://nhpr.org' }
 ];
+
+var liveblogs = [
+    { 'name': 'npr-liveblog', 'url': 'http://www.npr.org/2016/02/08/465595133/the-stream-cruz-on-drafting-women-jeb-bush-wont-blame-obama' },
+    { 'name': 'wapo-liveblog', 'url': 'https://www.washingtonpost.com/politics/trump-clinton-cautiously-optimistic-ahead-of-iowa-caucuses/2016/02/01/914388ae-c88a-11e5-a7b2-5a2f824b02c9_story.html' },
+    { 'name': 'wsj-liveblog', 'url': 'http://www.wsj.com/livecoverage/new-hampshire-primary' },
+    { 'name': 'guardian-liveblog', 'url': 'http://www.theguardian.com/us-news/live/2016/feb/09/new-hampshire-primary-results-polls-us-election-2016-live-coverage' },
+    { 'name': 'fox-liveblog', 'url': 'http://www.foxnews.com/politics/elections/2016/live-blog?intcmp=hpbt1' }
+    // { 'name': 'politico-liveblog', 'url': 'http://www.politico.com/blogs/iowa-caucus-2016-live-updates' },
+    // USUALLY BREAKS { 'name': 'abc-liveblog', 'url': 'http://liveblog.abcnews.go.com/Event/New_Hampshire_Primary_2016_Live_Updates_and_Analysis' },
+];
+
+var results = [
+    { 'name': 'nyt-results', 'url': 'http://www.nytimes.com/elections/2016/primaries/new-hampshire' },
+    { 'name': 'wapo-results', 'url': 'https://www.washingtonpost.com/2016-election-results/new-hampshire/' },
+    { 'name': 'cnn-results', 'url': 'http://www.cnn.com/election/primaries/states/nh/' },
+    { 'name': 'latimes-results', 'url': 'http://graphics.latimes.com/election-2016-new-hampshire-results/' },
+    { 'name': 'wsj-results', 'url': 'http://graphics.wsj.com/elections/2016/new-hampshire-primaries-results/' },
+    { 'name': 'guardian-results', 'url': 'http://www.theguardian.com/us-news/ng-interactive/2016/feb/09/new-hampshire-primary-results-live-2016-presidential-election-county-by-county-map' },
+    { 'name': 'politico-results', 'url': 'http://www.politico.com/2016-election/results/map/president/new-hampshire' },
+    { 'name': 'nbc-results', 'url': 'http://www.nbcnews.com/politics/2016-election/primaries/NH' },
+    { 'name': 'huffpo-results', 'url': 'http://elections.huffingtonpost.com/2016/primaries/2016-02-09' },
+    { 'name': 'bostonglobe-dem-results', 'url': 'http://apps.bostonglobe.com/election-results/2016/primary/democratic/new-hampshire/' },
+    { 'name': 'bostonglobe-gop-results', 'url': 'http://apps.bostonglobe.com/election-results/2016/primary/republican/new-hampshire/' },
+    { 'name': 'nhpr-results', 'url': 'http://nhpr.org/post/2016-presidential-primary-results' }
+];
+
+var TIMEOUT = 20000;
+var counter = 0;
+var data = results;
+var urlCount = data.length;
 
 var classify = function(str) {
     return str.toLowerCase()
@@ -47,42 +59,50 @@ var classify = function(str) {
 }
 
 var screenCap = function() {
-    urls.forEach(function(v,k) {
+    data.forEach(function(v,k) {
         saveImg(v);
     });
 }
 
 var saveImg = function(p) {
     var page = require('webpage').create();
-    var timestamp = null;
+    var timestamp = (new Date()).toLocaleString();
 
     page.viewportSize = {
-        width: 1600,
+        width: 1400,
         height: 2000
     };
 
-    // page.settings.userAgent = 'Chrome/48.0.2564.97';
-
     page.open(p['url'], function(success) {
-        timestamp = (new Date()).toLocaleString();
-
         if(success) {
-            console.log(p['name'], timestamp, classify(timestamp));
+            page.onError = function(msg, trace) {
+                // do nothing — don't push any page errors to the console
+                // via http://stackoverflow.com/questions/19459247/how-to-ignore-errors-in-phantomjs
+            };
             wait();
         } else {
-            console.log('error: ' + p['name']);
+            console.log('error loading: ' + p['name']);
+            page.close(); // via http://stackoverflow.com/questions/15005830/phantomjs-using-too-many-threads
+            incrementCounter();
         }
     });
 
     function wait() {
         setTimeout(function() {
             page.render('2016-02-09/' + p['name'] + '-' + classify(timestamp) + '.png');
+            page.close(); // via http://stackoverflow.com/questions/15005830/phantomjs-using-too-many-threads
 
-            counter++;
-            if (counter == urls.length - 1) {
-                phantom.exit();
-            }
-        }, 30000);
+            console.log('saved ' + (counter + 1) + ' (of ' + urlCount + '): ' + p['name'] + ' at ' + timestamp);
+            incrementCounter();
+        }, TIMEOUT);
+    }
+}
+
+var incrementCounter = function() {
+    counter++;
+    if (counter == urlCount) {
+        console.log('done');
+        phantom.exit();
     }
 }
 
