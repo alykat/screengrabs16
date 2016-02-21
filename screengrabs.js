@@ -36,7 +36,8 @@ var LIVEBLOGS = [
 var RESULTS = [
     { 'name': 'nyt-nv-results', 'url': 'http://www.nytimes.com/elections/2016/primaries/nevada' },
     { 'name': 'nyt-sc-results', 'url': 'http://www.nytimes.com/elections/2016/primaries/south-carolina' },
-    { 'name': 'nyt-model', 'url': 'http://www.nytimes.com/interactive/2016/02/20/upshot/live-nevada-caucus-model.html' },
+    { 'name': 'nyt-nv-model', 'url': 'http://www.nytimes.com/interactive/2016/02/20/upshot/live-nevada-caucus-model.html' },
+    { 'name': 'nyt-sc-model', 'url': 'http://www.nytimes.com/interactive/2016/02/20/upshot/live-south-carolina-primary-model.html' },
     { 'name': 'wapo-nv-results', 'url': 'https://www.washingtonpost.com/2016-election-results/nevada/' },
     { 'name': 'wapo-sc-results', 'url': 'https://www.washingtonpost.com/2016-election-results/south-carolina/' },
     { 'name': 'cnn-nv-results', 'url': 'http://www.cnn.com/election/primaries/states/nv/Dem' },
