@@ -14,50 +14,52 @@ var HOMEPAGES = [
     { 'name': 'bostonglobe', 'url': 'http://www.bostonglobe.com' },
     { 'name': 'huffpo', 'url': 'http://www.huffingtonpost.com' },
     // CRASHES PHANTOM { 'name': 'cbs', 'url': 'http://www.cbsnews.com' },
-    { 'name': 'las-vegas-sun', 'url': 'http://lasvegassun.com' },
-    { 'name': 'las-vegas-rj', 'url': 'http://www.reviewjournal.com' },
-    { 'name': 'sc-thestate', 'url': 'http://www.thestate.com' },
-    { 'name': 'charleston-pc', 'url': 'http://www.postandcourier.com' },
-    { 'name': 'sc-public-radio', 'url': 'http://southcarolinapublicradio.org' },
-    { 'name': 'nv-public-radio', 'url': 'http://knpr.org' },
+    { 'name': 'denver-post', 'url': 'http://www.denverpost.com' },
+    { 'name': 'atlanta-jc', 'url': 'http://www.ajc.com' },
+    { 'name': 'boston-globe', 'url': 'http://www.bostonglobe.com' },
+    { 'name': 'mn-star-trib', 'url': 'http://www.startribune.com' },
+    { 'name': 'knoxville-news', 'url': 'http://www.knoxnews.com' },
+    { 'name': 'knoxville-news', 'url': 'http://www.knoxnews.com' },
+    { 'name': 'dallas-mn', 'url': 'http://www.dallasnews.com' },
+    { 'name': 'austin-statesman', 'url': 'http://www.statesman.com' },
+    { 'name': 'houston-chronicle', 'url': 'http://www.chron.com' },
+    { 'name': 'texas-tribune', 'url': 'http://www.texastribune.org' },
+    { 'name': 'richmond-times-dispatch', 'url': 'http://www.richmond.com' },
+    { 'name': 'burlington-free-press', 'url': 'http://www.burlingtonfreepress.com' },
+    { 'name': 'vt-public-radio', 'url': 'http://digital.vpr.net' },
+    { 'name': 'kera', 'url': 'http://www.kera.org' },
+    { 'name': 'wamu', 'url': 'http://wamu.org' },
     { 'name': 'newshour', 'url': 'http://www.pbs.org/newshour/' }
 ];
 
 var LIVEBLOGS = [
-    { 'name': 'npr-liveblog', 'url': 'http://www.npr.org/2016/02/20/467487212/the-stream-south-carolina-and-nevada-go-to-the-polls' },
-    { 'name': 'wapo-liveblog', 'url': 'https://www.washingtonpost.com/news/post-politics-live/liveblog/live-blog-s-c-gop-primary-and-nevada-democratic-caucuses-are-today/' },
-    { 'name': 'wsj-liveblog', 'url': 'http://blogs.wsj.com/washwire/2016/02/20/south-carolina-republican-primary-and-nevada-democratic-caucuses-latest-updates/' },
-    { 'name': 'guardian-liveblog', 'url': 'http://www.theguardian.com/us-news/live/2016/feb/20/south-carolina-primary-nevada-caucus-live-coverage-us-presidential-election' },
-    { 'name': 'fox-liveblog', 'url': 'http://www.foxnews.com/politics/elections/2016/live-blog?intcmp=hpbt1' }
+    { 'name': 'npr-liveblog', 'url': 'http://www.npr.org/2016/03/01/468619121/the-stream-super-tuesday-edition' },
+    { 'name': 'wapo-liveblog', 'url': 'https://www.washingtonpost.com/news/post-politics-live/liveblog/super-tuesday-live-blog-the-voting-begins/' },
+    { 'name': 'wsj-liveblog', 'url': 'http://www.wsj.com/livecoverage/super-tuesday-results' },
+    { 'name': 'guardian-liveblog', 'url': 'http://www.theguardian.com/us-news/live/2016/mar/01/super-tuesday-live-trump-clinton-cruz-rubio-sanders-2016-presidential-election' },
+    { 'name': 'fox-liveblog', 'url': 'http://www.foxnews.com/politics/elections/2016/live-blog' }
     // { 'name': 'politico-liveblog', 'url': 'http://www.politico.com/blogs/iowa-caucus-2016-live-updates' },
     // USUALLY BREAKS { 'name': 'abc-liveblog', 'url': 'http://liveblog.abcnews.go.com/Event/New_Hampshire_Primary_2016_Live_Updates_and_Analysis' },
 ];
 
 var RESULTS = [
-    { 'name': 'nyt-nv-results', 'url': 'http://www.nytimes.com/elections/2016/primaries/nevada' },
-    { 'name': 'nyt-sc-results', 'url': 'http://www.nytimes.com/elections/2016/primaries/south-carolina' },
-    { 'name': 'nyt-nv-model', 'url': 'http://www.nytimes.com/interactive/2016/02/20/upshot/live-nevada-caucus-model.html' },
-    { 'name': 'nyt-sc-model', 'url': 'http://www.nytimes.com/interactive/2016/02/20/upshot/live-south-carolina-primary-model.html' },
-    { 'name': 'wapo-nv-results', 'url': 'https://www.washingtonpost.com/2016-election-results/nevada/' },
-    { 'name': 'wapo-sc-results', 'url': 'https://www.washingtonpost.com/2016-election-results/south-carolina/' },
-    { 'name': 'cnn-nv-results', 'url': 'http://www.cnn.com/election/primaries/states/nv/Dem' },
-    { 'name': 'cnn-sc-results', 'url': 'http://www.cnn.com/election/primaries/states/sc' },
-    { 'name': 'latimes-nv-results', 'url': 'http://graphics.latimes.com/election-2016-nevada-results/' },
-    { 'name': 'latimes-sc-results', 'url': 'http://graphics.latimes.com/election-2016-south-carolina-results/' },
-    { 'name': 'wsj-results', 'url': 'http://graphics.wsj.com/elections/2016/south-carolina-primary-nevada-caucus-results/' },
-    { 'name': 'guardian-results', 'url': 'http://www.theguardian.com/us-news/ng-interactive/2016/feb/20/nevada-south-carolina-live-results-primary-caucuses' },
-    { 'name': 'huffpo-results', 'url': 'http://elections.huffingtonpost.com/2016/primaries/2016-02-20' },
-    { 'name': 'politico-nv-results', 'url': 'http://www.politico.com/2016-election/results/map/president/nevada' },
-    { 'name': 'politico-sc-results', 'url': 'http://www.politico.com/2016-election/results/map/president/south-carolina' },
-    { 'name': 'nbc-results', 'url': 'http://www.nbcnews.com/politics/2016-election/primaries/NV' },
-    // { 'name': 'bostonglobe-dem-results', 'url': 'http://apps.bostonglobe.com/election-results/2016/primary/democratic/new-hampshire/' },
-    // { 'name': 'bostonglobe-gop-results', 'url': 'http://apps.bostonglobe.com/election-results/2016/primary/republican/new-hampshire/' },
+    { 'name': 'nyt-results', 'url': 'http://www.nytimes.com/elections/results' },
+    { 'name': 'nyt-model', 'url': 'http://www.nytimes.com/interactive/2016/03/01/upshot/super-tuesday-live-republican-delegate-estimates.html' },
+    { 'name': 'wapo-results', 'url': 'https://www.washingtonpost.com/2016-election-results/super-tuesday/' },
+    { 'name': 'cnn-results', 'url': 'http://www.cnn.com/specials/politics/super-tuesday-2016' },
+    { 'name': 'latimes-results', 'url': 'http://graphics.latimes.com/2016-election-super-tuesday-results/' },
+    { 'name': 'wsj-results', 'url': 'http://graphics.wsj.com/elections/2016/super-tuesday-results/' },
+    { 'name': 'guardian-results', 'url': 'http://www.theguardian.com/us-news/ng-interactive/2016/mar/01/super-tuesday-results-live-state-by-state' },
+    { 'name': 'huffpo-results', 'url': 'http://elections.huffingtonpost.com/2016/primaries/2016-03-01' },
+    // { 'name': 'politico-results', 'url': 'http://www.politico.com/2016-election/results/map/president/south-carolina' },
+    { 'name': 'nbc-results', 'url': 'http://www.nbcnews.com/politics/2016-election/primaries' },
+    { 'name': 'bostonglobe-results', 'url': 'https://apps.bostonglobe.com/election-results/2016/index.html#calendar?p1=BG_super_tuesday_desktop_link' },
     { 'name': 'newshour', 'url': 'http://www.pbs.org/newshour/data/election-calendar/' }
 ];
 
 var TIMEOUT = 20000;
 var counter = 0;
-var data = HOMEPAGES;
+var data = RESULTS;
 var urlCount = data.length;
 
 var classify = function(str) {
@@ -99,7 +101,7 @@ var saveImg = function(p) {
 
     function wait() {
         setTimeout(function() {
-            page.render('2016-02-20/' + p['name'] + '-' + classify(timestamp) + '.png');
+            page.render('2016-03-01/' + p['name'] + '-' + classify(timestamp) + '.png');
             page.close(); // via http://stackoverflow.com/questions/15005830/phantomjs-using-too-many-threads
 
             console.log('saved ' + (counter + 1) + ' (of ' + urlCount + '): ' + p['name'] + ' at ' + timestamp);
